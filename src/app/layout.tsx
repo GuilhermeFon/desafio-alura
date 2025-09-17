@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Chakra_Petch, Inter} from "next/font/google";
 import Header from "@/components/Header";
 import {ThemeProvider} from "next-themes";
+import LayerImage from "@/assets/layer.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,12 +37,20 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       suppressHydrationWarning
     >
       <body
-        className={`${inter.className} min-h-screen flex flex-col antialiased bg-background text-foreground transition-colors duration-300`}
+        className={`${inter.className} min-h-screen flex flex-col antialiased text-foreground transition-colors duration-300`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Header />
-          <main className="flex-1">{children}</main>
-        </ThemeProvider>
+        <div
+          className="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${LayerImage.src})`,
+            backgroundPosition: "center 5px",
+          }}
+        >
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <Header />
+            <main className="flex-1">{children}</main>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

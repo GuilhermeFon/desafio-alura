@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 import PersonImage from "@/assets/person.png";
+import FrameImage from "@/assets/frame.png";
 
 export default function HeroSection() {
   return (
-    <section className="bg-background py-[69px] transition-colors duration-300">
+    <section className="py-[69px] transition-colors duration-300">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="mb-6">
           <Image
@@ -21,7 +22,7 @@ export default function HeroSection() {
           Olá, meu nome é Fernanda_
         </p>
 
-        <h1 className="text-5xl md:text-6xl font-chakra font-bold mb-6 text-tertiary">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-chakra font-bold mb-6 text-tertiary">
           Eu ensino <span className="text-linear">Programação</span>
         </h1>
 
@@ -31,6 +32,15 @@ export default function HeroSection() {
           sobre pensamento computacional usando HTML, CSS e JavaScript. Veja os
           projetos que já desenvolvi!
         </p>
+
+        <div className="flex justify-center mt-[109px]">
+          <Image
+            src={FrameImage}
+            alt="Moldura decorativa"
+            width={0}
+            height={0}
+          />
+        </div>
       </div>
     </section>
   );

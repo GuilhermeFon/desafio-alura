@@ -59,8 +59,8 @@ export default function SearchBar() {
   }, [searchParams]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between mt-[15px] mb-8 h-10">
-      <div className="flex justify-center space-x-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-6 mt-[15px] mb-8 lg:h-10">
+      <div className="flex flex-col sm:flex-row gap-4 space-x-8">
         <p className="font-chakra font-bold text-2xl text-tertiary content-center">
           Minhas Postagens
         </p>
@@ -81,9 +81,9 @@ export default function SearchBar() {
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-4">
         <span className="font-bold text-tertiary">Categorias:</span>
-        <div className="flex gap-2 w-[276px] overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2 lg:w-[276px] overflow-x-auto scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category.id}

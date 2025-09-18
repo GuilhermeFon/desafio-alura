@@ -24,7 +24,7 @@ export default function Pagination({currentPage, totalPages}: PaginationProps) {
   const pages = Array.from({length: totalPages}, (_, i) => i + 1);
 
   return (
-    <nav className="flex justify-center items-center space-x-4 mt-8">
+    <nav className="flex justify-center items-center space-x-1 md:space-x-4 mt-8">
       {pages.map((page) => (
         <Link
           key={page}

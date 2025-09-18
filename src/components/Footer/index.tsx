@@ -3,8 +3,8 @@ import {Mail, Linkedin, Github} from "lucide-react";
 export default function Footer() {
   return (
     <footer className="pb-[41px] pt-[58px]">
-      <div className="flex max-w-7xl mx-auto justify-between px-4 sm:px-6 lg:px-8">
-        <div className="space-y-4">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <div className="md:space-y-4">
           <h3 className="font-chakra font-bold text-primary">
             Vamos conversar?
           </h3>
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-16 justify-items-center">
-        <p className="text-secondary">
+        <p className="text-xs sm:text-base text-secondary">
           © Copyright 2025. Produzido por Fernanda Mascheti
         </p>
       </div>

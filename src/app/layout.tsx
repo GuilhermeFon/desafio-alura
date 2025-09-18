@@ -40,10 +40,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         className={`${inter.className} min-h-screen flex flex-col antialiased text-foreground transition-colors duration-300`}
       >
         <div
-          className="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+          className="min-h-screen flex flex-col bg-no-repeat"
           style={{
             backgroundImage: `url(${LayerImage.src})`,
-            backgroundPosition: "center 5px",
+            backgroundPosition: "center top",
+            backgroundPositionY: "-67px",
+            backgroundSize: "100vw auto",
           }}
         >
           <Providers>

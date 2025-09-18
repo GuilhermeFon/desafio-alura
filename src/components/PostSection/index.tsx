@@ -8,8 +8,8 @@ interface PostSectionProps {
 export default function PostSection({post}: PostSectionProps) {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-[72px]">
-      <div className="flex justify-between gap-6">
-        <div className="w-1/2 flex flex-col justify-between gap-6">
+      <div className="flex flex-col sm:flex-row justify-between gap-6">
+        <div className="w-full sm:w-1/2 flex flex-col justify-between gap-6">
           <h1 className="text-3xl md:text-5xl font-chakra font-bold text-tertiary">
             {post.title}
           </h1>
@@ -36,7 +36,7 @@ export default function PostSection({post}: PostSectionProps) {
           </div>
         </div>
 
-        <div className="w-1/2 justify-items-end">
+        <div className="w-full sm:w-1/2 justify-items-end">
           <Image
             src={post.imageUrl}
             alt={post.title}

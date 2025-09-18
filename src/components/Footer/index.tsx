@@ -2,8 +2,8 @@ import {Mail, Linkedin, Github} from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="pb-[41px] pt-[58px]">
-      <div className="flex flex-col md:flex-row max-w-7xl mx-auto justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <footer className="pb-[41px] pt-[58px] px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row max-w-7xl mx-auto justify-between gap-4 ">
         <div className="md:space-y-4">
           <h3 className="font-chakra font-bold text-primary">
             Vamos conversar?

@@ -6,6 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import {api} from "@/helpers/api";
 import type {Post} from "@/types/blog";
 import type {ApiListResponse} from "@/types/common";
+import Footer from "@/components/Footer";
 
 interface HomeProps {
   searchParams: Promise<{category?: string; page?: string; search?: string}>;
@@ -45,6 +46,7 @@ export default async function Home({searchParams}: HomeProps) {
       <HeroSection />
       <SearchBar />
       <PostsGridSection posts={filteredPosts} pagination={adjustedPagination} />
+      <Footer />
     </>
   );
 }

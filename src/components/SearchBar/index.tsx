@@ -30,11 +30,11 @@ export default function SearchBar() {
     const params = new URLSearchParams(searchParams);
     params.set("search", value);
     params.set("page", "1");
-    router.replace(`/?${params.toString()}`, { scroll: false });
+    router.replace(`/?${params.toString()}`, {scroll: false});
   }, 500);
 
   const handleChangeSearch = (value: string) => {
-    setSearchTerm(value); 
+    setSearchTerm(value);
     debouncedSearch(value);
   };
 
@@ -50,7 +50,7 @@ export default function SearchBar() {
     }
 
     params.set("page", "1");
-    router.replace(`/?${params.toString()}`, { scroll: false });
+    router.replace(`/?${params.toString()}`, {scroll: false});
   };
 
   useEffect(() => {
@@ -59,18 +59,22 @@ export default function SearchBar() {
   }, [searchParams]);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-6 mt-[15px] mb-8 lg:h-10">
-      <div className="flex flex-col sm:flex-row gap-4 space-x-8">
+    <div
+      id="search-section"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between gap-6 mt-[15px] mb-8"
+    >
+      <div className="flex flex-col sm:flex-row gap-4 lg:gap-8">
         <p className="font-chakra font-bold text-2xl text-tertiary content-center">
           Minhas Postagens
         </p>
-        <div className="relative max-w-md">
+        <div className="relative lg:w-80">
           <input
             type="text"
+            name="search"
             placeholder="Buscar..."
             value={searchTerm}
             onChange={(e) => handleChangeSearch(e.target.value)}
-            className="w-full px-3.5 py-2 pr-10 border border-primary rounded-sm"
+            className="w-full px-3.5 py-[7px] pr-10 border border-primary rounded-sm"
           />
           <button
             type="submit"
@@ -81,9 +85,9 @@ export default function SearchBar() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+      <div className="w-full lg:w-1/3 flex flex-col lg:flex-row lg:items-center gap-4">
         <span className="font-bold text-tertiary">Categorias:</span>
-        <div className="flex gap-2 lg:w-[276px] overflow-x-auto scrollbar-hide">
+        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category.id}

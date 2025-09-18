@@ -1,6 +1,8 @@
 export type NavItem = {
   label: string;
   href: string;
+  slug: string;
+  onClick?: () => void;
 };
 
 export type Pagination = {
@@ -12,7 +14,12 @@ export type Pagination = {
   hasPreviousPage: boolean;
 };
 
-export type ApiListResponse<T> = {
+export type ApiPostsResponse<T> = {
   pagination: Pagination;
   posts: T[];
+};
+
+export type ApiPostResponse<T> = {
+  meta: Pagination;
+  post: T;
 };

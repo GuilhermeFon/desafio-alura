@@ -1,29 +1,6 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-    --primary: #1ca7c8;
-    --secondary: #6e859f;
-    --tertiary: #284260;
-  }
-
-  .dark {
-    --background: #000000;
-    --foreground: #ffffff;
-    --primary: #1ca7c8;
-    --secondary: #8da9c9;
-    --tertiary: #b0c4de;
-  }
-
-  body {
-    background: var(--background) !important;
-    color: var(--foreground) !important;
-    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-}
+@config '../../tailwind.config.ts';
 
 @layer components {
   .text-linear {
@@ -35,39 +12,45 @@
 }
 
 @layer utilities {
-  .text-primary {
-    color: var(--primary);
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --foreground-light: #9d9d9d;
+    --primary: #1ca7c8;
+    --secondary: #6e859f;
+    --tertiary: #284260;
   }
 
-  .text-secondary {
-    color: var(--secondary);
+  .dark {
+    --background: #000000;
+    --foreground: #ffffff;
+    --foreground-light: #9d9d9d;
+    --primary: #1ca7c8;
+    --secondary: #8da9c9;
+    --tertiary: #b0c4de;
   }
 
-  .text-tertiary {
-    color: var(--tertiary);
-  }
-
-  .text-foreground {
-    color: var(--foreground);
-  }
-
-  .text-background {
-    color: var(--background);
-  }
-
-  .bg-background {
-    background-color: var(--background);
-  }
-
-  .bg-foreground {
-    background-color: var(--foreground);
-  }
-
-  .bg-tertiary {
-    background-color: var(--tertiary);
+  body {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .font-chakra {
     font-family: var(--font-chakra-petch), sans-serif;
   }
+
+  .drop-shadow-primary:hover {
+    box-shadow: 0 4px 44px rgba(28, 167, 200, 0.3);
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

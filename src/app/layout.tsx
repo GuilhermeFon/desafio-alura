@@ -2,8 +2,8 @@ import "./globals.css";
 import type {Metadata} from "next";
 import {Chakra_Petch, Inter} from "next/font/google";
 import Header from "@/components/Header";
-import {ThemeProvider} from "next-themes";
 import LayerImage from "@/assets/layer.png";
+import Providers from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,10 +46,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             backgroundPosition: "center 5px",
           }}
         >
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Providers>
             <Header />
             <main className="flex-1">{children}</main>
-          </ThemeProvider>
+          </Providers>
         </div>
       </body>
     </html>

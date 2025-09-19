@@ -85,7 +85,7 @@ export default function SearchBar() {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/3 flex flex-col lg:flex-row lg:items-center gap-4">
+      <div className="w-full lg:w-2/5 flex flex-col lg:flex-row lg:items-center gap-4">
         <span className="font-bold text-tertiary">Categorias:</span>
         <div className="flex gap-2 overflow-x-auto scrollbar-hide">
           {categories.map((category) => (

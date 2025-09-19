@@ -26,7 +26,7 @@ export default function PostsGridSection({
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 justify-items-center">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 justify-items-center">
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
         role="main"
@@ -45,6 +45,6 @@ export default function PostsGridSection({
           totalPages={pagination.totalPages}
         />
       )}
-    </div>
+    </section>
   );
 }

@@ -4,6 +4,8 @@ import {api} from "@/helpers/api";
 import {Metadata} from "next";
 import PostSection from "@/components/PostSection";
 import RelatedPostsSection from "@/components/RelatedPostsSection";
+import layerImage from "@/assets/layer.png";
+import Image from "next/image";
 
 interface BlogPostPageProps {
   params: Promise<{id: string}>;
@@ -45,9 +47,19 @@ export default async function BlogPage({params}: BlogPostPageProps) {
     .slice(0, 3);
 
   return (
-    <>
+    <div className="relative overflow-hidden min-h-screen w-full">
       <PostSection post={post} />
       <RelatedPostsSection posts={filteredPosts} />
-    </>
+
+      <div className="absolute bottom-0 left-0 w-full translate-y-2/3 z-0">
+        <Image
+          src={layerImage}
+          alt="Decorative layer"
+          className="w-full h-auto object-cover opacity-80"
+          priority={false}
+        />
+        <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-background to-transparent pointer-events-none" />
+      </div>
+    </div>
   );
 }

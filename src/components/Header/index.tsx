@@ -116,7 +116,7 @@ export default function Header() {
                       <Link
                         href={item.href}
                         onClick={item.onClick}
-                        className={`text-2xl transition-colors font-chakra font-bold ${
+                        className={`text-2xl transition-colors font-chakra font-bold focus:outline-none focus:ring-0 ${
                           activeSection === item.slug && pathname === "/"
                             ? "text-primary"
                             : "text-tertiary"
@@ -127,7 +127,7 @@ export default function Header() {
                     ) : (
                       <button
                         onClick={item.onClick}
-                        className={`text-2xl transition-colors font-chakra font-bold bg-transparent border-none cursor-pointer ${
+                        className={`text-2xl transition-colors font-chakra font-bold bg-transparent border-none cursor-pointer focus:outline-none focus:ring-0 ${
                           activeSection === item.slug ||
                           pathname.includes("/blog")
                             ? "text-primary"
